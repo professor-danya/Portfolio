@@ -1,53 +1,22 @@
 # Portfolio
 
-Premium portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+Premium personal portfolio built with Next.js.
 
-## Stack
+## Tech Stack
 
-- **Framework:** Next.js 15 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS v4
-- **Animation:** Framer Motion
-- **Typography:** Geist Sans & Geist Mono
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
 
-## Getting Started
+## Features
 
-```bash
-npm install
-npm run dev
-```
+- Modern UI
+- Glassmorphism
+- Smooth animations
+- Responsive design
 
-Open [http://localhost:3000](http://localhost:3000).
+## Status
 
-## Project Structure
-
-```
-src/
-├── app/                  # Next.js App Router
-│   ├── layout.tsx        # Root layout with fonts & metadata
-│   ├── page.tsx          # Home page composing all sections
-│   └── globals.css       # Global styles & design tokens
-├── components/
-│   ├── layout/           # Navigation, Footer
-│   ├── sections/         # Hero, Projects, Services, etc.
-│   └── ui/               # Reusable UI primitives
-├── lib/
-│   ├── data/             # Content data (projects, services, etc.)
-│   └── utils.ts          # Utility functions
-└── types/                # Shared TypeScript types
-```
-
-## Scripts
-
-| Command       | Description              |
-|---------------|--------------------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Production build       |
-| `npm run start` | Start production server |
-| `npm run lint`  | Run ESLint             |
-
-## Customization
-
-Edit content in `src/lib/data/` — projects, services, navigation, tech stack, and social links are all data-driven.
-
-Update personal details in `src/lib/data/navigation.ts` (`siteConfig`).
+🚧 Currently under active development.
