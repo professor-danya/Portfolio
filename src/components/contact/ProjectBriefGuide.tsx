@@ -1,28 +1,24 @@
 const usefulContext = [
   {
-    title: "Current process",
-    description: "What happens today, including the manual steps or friction.",
+    title: "What currently requires manual work?",
   },
   {
-    title: "Desired result",
-    description: "What the system should make clearer, faster, or more reliable.",
+    title: "What result should the system produce?",
   },
   {
-    title: "Tools and data",
-    description: "The services, APIs, files, or databases already involved.",
+    title: "Which tools or services are already involved?",
   },
   {
-    title: "Constraints",
-    description: "Important requirements, dependencies, or operating limits.",
+    title: "Are there important constraints or deadlines?",
   },
 ];
 
 const discussionTopics = [
-  "AI-assisted workflows",
-  "Telegram assistants",
+  "AI workflows",
+  "Telegram bots",
   "API integrations",
+  "Web applications",
   "Data processing",
-  "Internal web applications",
   "CRM automation",
 ];
 
@@ -31,7 +27,7 @@ export function ProjectBriefGuide() {
     <div>
       <div className="flex items-center justify-between border-b border-white/[0.07] pb-4">
         <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-600">
-          Useful context for a first message
+          Useful context
         </p>
         <span className="font-mono text-[9px] text-zinc-700">04</span>
       </div>
@@ -46,9 +42,8 @@ export function ProjectBriefGuide() {
               {String(index + 1).padStart(2, "0")}
             </span>
             <div>
-              <p className="text-xs font-medium text-zinc-300">{item.title}</p>
-              <p className="mt-1.5 text-[11px] leading-relaxed text-zinc-600">
-                {item.description}
+              <p className="text-xs leading-relaxed text-zinc-300">
+                {item.title}
               </p>
             </div>
           </li>
@@ -57,7 +52,7 @@ export function ProjectBriefGuide() {
 
       <div className="mt-8">
         <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-700">
-          Relevant problems
+          Typical discussions
         </p>
         <div className="mt-3 flex flex-wrap gap-1.5">
           {discussionTopics.map((topic) => (

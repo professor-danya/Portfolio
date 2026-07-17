@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { siteConfig } from "@/lib/data/navigation";
+import { siteConfig } from "@/lib/config/site";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 

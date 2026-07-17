@@ -1,5 +1,5 @@
-import { navigation, siteConfig } from "@/lib/data/navigation";
-import { socialLinks } from "@/lib/data/social";
+import { siteConfig } from "@/lib/config/site";
+import { navigation } from "@/lib/data/navigation";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
@@ -38,21 +38,9 @@ export function Footer() {
 
           <div>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-zinc-600">
-              Connect
+              Contact
             </p>
             <ul className="space-y-2">
-              {socialLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-zinc-400 transition-colors hover:text-zinc-200"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}

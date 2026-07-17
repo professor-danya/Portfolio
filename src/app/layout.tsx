@@ -1,14 +1,26 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
-import { siteConfig } from "@/lib/data/navigation";
+import { siteConfig } from "@/lib/config/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} — ${siteConfig.role}`,
-  description: siteConfig.tagline,
+  metadataBase: siteConfig.url,
+  title: {
+    default: siteConfig.title,
+    template: `%s — ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "technology",
+  alternates: {
+    canonical: "/",
+  },
+  manifest: "/manifest.webmanifest",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -23,10 +35,24 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: `${siteConfig.name} — ${siteConfig.role}`,
-    description: siteConfig.tagline,
+    title: siteConfig.title,
+    description: siteConfig.description,
     type: "website",
+    url: "/",
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
   },
+  twitter: {
+    card: "summary",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: ["/icon.png"],
+  },
+};
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#09090b",
 };
 
 export default function RootLayout({

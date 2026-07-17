@@ -8,11 +8,3 @@ export const navigation: NavLink[] = [
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
-
-export const siteConfig = {
-  name: "Alex Mercer",
-  role: "Software Engineer",
-  email: "hello@alexmercer.dev",
-  tagline: "Crafting digital experiences with precision and intent.",
-  availability: "Available for select projects",
-};

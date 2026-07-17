@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { navigation, siteConfig } from "@/lib/data/navigation";
+import { siteConfig } from "@/lib/config/site";
+import { navigation } from "@/lib/data/navigation";
 import { cn } from "@/lib/utils";
 
 export function Navigation() {
@@ -33,10 +34,10 @@ export function Navigation() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
         <a
           href="#"
-          className="text-sm font-medium tracking-tight text-zinc-100 transition-colors hover:text-white"
+          aria-label={`${siteConfig.name} home`}
+          className="font-mono text-sm font-medium tracking-[-0.06em] text-zinc-100 transition-colors hover:text-white"
         >
-          {siteConfig.name.split(" ")[0]}
-          <span className="text-zinc-500">.</span>
+          {siteConfig.mark}
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">

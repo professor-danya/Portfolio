@@ -71,8 +71,3 @@ export interface TechCategory {
   name: string;
   items: string[];
 }
-
-export interface SocialLink {
-  label: string;
-  href: string;
-}
