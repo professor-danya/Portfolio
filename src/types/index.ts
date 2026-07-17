@@ -6,11 +6,31 @@ export interface NavLink {
 export interface Project {
   id: string;
   title: string;
-  description: string;
-  tags: string[];
-  year: string;
+  category: string;
+  status: "Prototype" | "Production" | "Experiment";
+  summary: string;
+  problem: string;
+  solution: string;
+  role: string;
+  engineeringApproach: string[];
+  builtWith?: string[];
+  outcome?: {
+    statement: string;
+    context?: string;
+  };
+  visual: "workflow" | "assistant" | "parser";
+  tier: "flagship" | "supporting";
   href?: string;
-  featured?: boolean;
+  repositoryUrl?: string;
+}
+
+export interface ProjectExperiment {
+  id: string;
+  title: string;
+  description: string;
+  status: "Experiment";
+  builtWith?: string[];
+  href?: string;
 }
 
 export interface Service {

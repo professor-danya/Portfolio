@@ -1,77 +1,49 @@
-import { projects } from "@/lib/data/projects";
+import { projectExperiments, projects } from "@/lib/data/projects";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { GlassCard } from "@/components/ui/GlassCard";
-import { Badge } from "@/components/ui/Badge";
-import { FadeIn } from "@/components/ui/FadeIn";
+import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
+import { ExperimentIndex } from "@/components/projects/ExperimentIndex";
 
 export function Projects() {
-  const featured = projects.filter((p) => p.featured);
-  const rest = projects.filter((p) => !p.featured);
+  const flagship = projects.find((project) => project.tier === "flagship");
+  const supporting = projects.filter(
+    (project) => project.tier === "supporting",
+  );
 
   return (
-    <section id="projects" className="py-32">
+    <section
+      id="projects"
+      aria-label="Selected systems"
+      className="relative border-t border-white/[0.04] py-28 sm:py-32"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-96 bg-[radial-gradient(ellipse_55%_40%_at_50%_0%,rgba(191,219,254,0.035),transparent)]"
+      />
+
       <Container>
-        <FadeIn>
+        <div className="relative">
           <SectionHeader
-            label="Selected Work"
-            title="Projects that push boundaries"
-            description="A curated selection of recent work spanning web platforms, AI systems, automation, and APIs."
+            label="Selected systems"
+            title="Engineering complex work into clear products"
+            description="Product and engineering prototypes exploring practical AI, automation, and data infrastructure."
           />
-        </FadeIn>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          {featured.map((project, i) => (
-            <FadeIn key={project.id} delay={i * 0.1}>
-              <GlassCard hover className="group relative h-full overflow-hidden lg:col-span-1">
-                <div className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/[0.02] blur-3xl transition-all duration-700 group-hover:bg-white/[0.04]" />
-                <div className="relative">
-                  <div className="mb-4 flex items-center justify-between">
-                    <span className="text-xs font-medium text-zinc-500">
-                      {project.year}
-                    </span>
-                    <span className="text-xs text-zinc-600">Featured</span>
-                  </div>
-                  <h3 className="text-xl font-medium tracking-tight text-zinc-100">
-                    {project.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">
-                    {project.description}
-                  </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag}>{tag}</Badge>
-                    ))}
-                  </div>
-                </div>
-              </GlassCard>
-            </FadeIn>
-          ))}
-        </div>
+          <div className="space-y-8 lg:space-y-12">
+            {flagship && (
+              <ProjectShowcase project={flagship} index={0} />
+            )}
+            {supporting.map((project, index) => (
+              <ProjectShowcase
+                key={project.id}
+                project={project}
+                index={index + 1}
+                reverse={index % 2 === 0}
+              />
+            ))}
+          </div>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {rest.map((project, i) => (
-            <FadeIn key={project.id} delay={0.2 + i * 0.08}>
-              <GlassCard hover className="group h-full">
-                <span className="text-xs font-medium text-zinc-500">
-                  {project.year}
-                </span>
-                <h3 className="mt-2 text-base font-medium tracking-tight text-zinc-100">
-                  {project.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-500 line-clamp-3">
-                  {project.description}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {project.tags.slice(0, 3).map((tag) => (
-                    <Badge key={tag} className="text-[10px]">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </GlassCard>
-            </FadeIn>
-          ))}
+          <ExperimentIndex experiments={projectExperiments} />
         </div>
       </Container>
     </section>

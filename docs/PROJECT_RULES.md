@@ -139,3 +139,30 @@ Never sacrifice performance for animations.
 Goal
 
 Create a portfolio that looks like it belongs to a senior AI engineer and premium digital product studio.
+
+## Development Rules
+
+Before creating new components:
+
+- Analyze existing architecture
+- Prefer reusable components
+- Avoid unnecessary dependencies
+- Keep TypeScript strict
+- Do not modify unrelated sections
+
+---
+
+## Product Philosophy
+
+The portfolio should demonstrate:
+
+- real engineering ability
+- AI systems thinking
+- automation expertise
+- product design understanding
+
+Not:
+
+- generic frontend templates
+- fake SaaS claims
+- marketing hype
