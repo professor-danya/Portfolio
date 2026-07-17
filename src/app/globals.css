@@ -93,15 +93,15 @@ body {
 }
 
 .hero-headline {
-  font-size: clamp(2.75rem, 7vw, 5.25rem);
+  font-size: clamp(3.25rem, 7vw, 6.5rem);
   font-weight: 300;
-  line-height: 0.95;
-  letter-spacing: -0.045em;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
 }
 
-@media (min-width: 1280px) {
+@media (max-width: 360px) {
   .hero-headline {
-    font-size: clamp(5rem, 5.5vw, 6.25rem);
+    font-size: 2.85rem;
   }
 }
 
@@ -117,37 +117,17 @@ body {
   color: transparent;
 }
 
-.hero-terminal {
+.hero-product {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.04) inset,
     0 24px 80px -12px rgba(0, 0, 0, 0.65),
     0 0 60px -20px rgba(120, 130, 255, 0.08);
 }
 
-.hero-terminal-glow {
+.hero-product-glow {
   background: radial-gradient(
     ellipse at 50% 50%,
     rgba(120, 130, 255, 0.1),
     transparent 70%
   );
-}
-
-.hero-cursor {
-  animation: hero-blink 1.1s step-end infinite;
-}
-
-@keyframes hero-blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-cursor {
-    animation: none;
-  }
 }
