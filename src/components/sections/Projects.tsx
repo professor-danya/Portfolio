@@ -24,9 +24,9 @@ export function Projects() {
       <Container>
         <div className="relative">
           <SectionHeader
-            label="Selected systems"
-            title="Engineering complex work into clear products"
-            description="Product and engineering prototypes exploring practical AI, automation, and data infrastructure."
+            label="Engineering experiments"
+            title="Studying practical AI through working prototypes"
+            description="Working prototypes used to explore automation, conversational systems, and reliable data processing."
           />
 
           <div className="space-y-8 lg:space-y-12">

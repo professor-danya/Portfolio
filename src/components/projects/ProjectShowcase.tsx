@@ -58,7 +58,7 @@ function ProjectNarrative({ project }: { project: Project }) {
           {project.status}
         </span>
         <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-zinc-600">
-          {project.category}
+          {project.workType} · {project.category}
         </span>
       </div>
 

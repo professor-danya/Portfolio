@@ -53,7 +53,7 @@ function WorkflowVisual({ reducedMotion }: { reducedMotion: boolean }) {
 
   return (
     <div className="min-h-[390px] sm:min-h-[450px]">
-      <WindowChrome label="Automation engine" status="Executing" />
+      <WindowChrome label="Workflow prototype" status="Test run" />
       <div className="grid min-h-[345px] grid-cols-1 sm:grid-cols-[1fr_170px]">
         <div className="p-4 sm:p-6">
           <div className="flex items-center justify-between">
@@ -157,7 +157,7 @@ function WorkflowVisual({ reducedMotion }: { reducedMotion: boolean }) {
 function AssistantVisual({ reducedMotion }: { reducedMotion: boolean }) {
   return (
     <div className="min-h-[360px]">
-      <WindowChrome label="Telegram assistant" status="Connected" />
+      <WindowChrome label="Assistant experiment" status="Sandbox" />
       <div className="grid min-h-[315px] grid-cols-[1fr_112px] sm:grid-cols-[1fr_150px]">
         <div className="p-4">
           <div className="flex items-center gap-3 border-b border-white/[0.05] pb-3">
@@ -248,7 +248,7 @@ function ParserVisual({ reducedMotion }: { reducedMotion: boolean }) {
 
   return (
     <div className="min-h-[360px]">
-      <WindowChrome label="Data parser" status="Reviewing" />
+      <WindowChrome label="Parser prototype" status="Reviewing" />
       <div className="p-4 sm:p-5">
         <div className="grid grid-cols-[1fr_auto] items-center gap-4 rounded-xl border border-white/[0.065] bg-white/[0.018] p-3">
           <div className="min-w-0">

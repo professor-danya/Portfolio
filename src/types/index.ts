@@ -8,6 +8,7 @@ export interface Project {
   title: string;
   category: string;
   status: "Prototype" | "Production" | "Experiment";
+  workType: "Real project" | "Engineering experiment";
   summary: string;
   problem: string;
   solution: string;
@@ -36,9 +37,22 @@ export interface ProjectExperiment {
 export interface Service {
   id: string;
   title: string;
-  description: string;
-  icon: ServiceIcon;
+  summary: string;
+  purpose: string;
+  deliverables: string[];
+  engineeringFocus: string[];
+  visual: ServiceVisual;
+  featured?: boolean;
 }
+
+export type ServiceVisual =
+  | "ai"
+  | "telegram"
+  | "python"
+  | "api"
+  | "web"
+  | "data"
+  | "crm";
 
 export type ServiceIcon =
   | "web"
