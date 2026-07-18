@@ -1,17 +1,46 @@
+function createAbsoluteUrl(value: string) {
+  const url = new URL(
+    value.startsWith("http://") || value.startsWith("https://")
+      ? value
+      : `https://${value}`,
+  );
+
+  if (url.protocol !== "http:" && url.protocol !== "https:") {
+    throw new Error("The configured site URL must use HTTP or HTTPS.");
+  }
+
+  return url;
+}
+
 function resolveSiteUrl() {
   const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 
-  if (!configuredUrl) {
-    if (process.env.NODE_ENV === "production") {
-      throw new Error(
-        "NEXT_PUBLIC_SITE_URL must be configured for production builds.",
-      );
-    }
-
-    return new URL("http://localhost:3000");
+  if (configuredUrl) {
+    return createAbsoluteUrl(configuredUrl);
   }
 
-  return new URL(configuredUrl);
+  if (process.env.VERCEL_ENV === "production") {
+    const vercelProductionUrl =
+      process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+
+    if (vercelProductionUrl) {
+      return createAbsoluteUrl(vercelProductionUrl);
+    }
+
+    throw new Error(
+      "NEXT_PUBLIC_SITE_URL must be configured for production deployments.",
+    );
+  }
+
+  const vercelPreviewUrl =
+    process.env.VERCEL_BRANCH_URL?.trim() ||
+    process.env.VERCEL_URL?.trim();
+
+  if (vercelPreviewUrl) {
+    return createAbsoluteUrl(vercelPreviewUrl);
+  }
+
+  return new URL("http://localhost:3000");
 }
 
 export const siteConfig = {

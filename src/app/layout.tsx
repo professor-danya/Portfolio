@@ -41,12 +41,20 @@ export const metadata: Metadata = {
     url: "/",
     siteName: siteConfig.name,
     locale: siteConfig.locale,
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Professor Danya — AI Automation & Software Systems",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: ["/icon.png"],
+    images: ["/opengraph-image.png"],
   },
 };
 

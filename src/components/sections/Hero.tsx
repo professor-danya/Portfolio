@@ -293,7 +293,7 @@ export function Hero() {
             </motion.div>
 
             <h1 id="hero-title" className="hero-headline text-zinc-50">
-              {headlineLines.map((line, lineIndex) => {
+              {headlineLines.map((line) => {
                 const delay = wordOffset;
                 wordOffset += line.text.split(" ").length * 0.07 + 0.06;
 
